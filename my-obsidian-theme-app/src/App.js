@@ -1,23 +1,33 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import ThemePreview from './ThemePreview';
+import ThemeControls from './ThemeControls';
 import './App.css';
 
 function App() {
+  const [theme, setTheme] = useState({
+    primaryColor: '#000000',
+    secondaryColor: '#ffffff',
+    accentColor: '#ff0000',
+    fontFamily: 'Arial, sans-serif',
+    fontSize: '16px',
+  });
+
+  const updateTheme = (property, value) => {
+    setTheme((prevTheme) => ({
+      ...prevTheme,
+      [property]: value,
+    }));
+  };
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Obsidian Theme Creator</h1>
       </header>
+      <main>
+        <ThemePreview theme={theme} />
+        <ThemeControls theme={theme} updateTheme={updateTheme} />
+      </main>
     </div>
   );
 }

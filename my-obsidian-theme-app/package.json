@@ -1,7 +1,8 @@
 {
-  "name": "my-obsidian-theme-app",
+  "name": "obsidian-theme-creator",
   "version": "0.1.0",
   "private": true,
+  "description": "A web app for creating and customizing Obsidian themes",
   "dependencies": {
     "cra-template": "1.2.0",
     "react": "^19.0.0",
