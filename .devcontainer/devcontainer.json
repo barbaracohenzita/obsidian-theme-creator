@@ -1,0 +1,7 @@
+{
+  "tasks": {
+    "test": "echo \"No tests are set up for this project.\"",
+    "build": "No command needed.",
+    "launch": "open index.html"
+  }
+}
