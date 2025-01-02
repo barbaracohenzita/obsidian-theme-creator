@@ -2,7 +2,7 @@
     --primary-color: #000000;
     --secondary-color: #ffffff;
     --accent-color: #ff0000;
-    --font-family: Arial, sans-serif;
+    --font-family: 'Arial, sans-serif';
     --font-size: 16px;
 }
 
@@ -20,9 +20,10 @@ body {
 }
 
 #preview {
-    padding: 10px;
-    border: 1px solid var(--primary-color);
+    padding: 20px;
     background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: 1px solid var(--accent-color);
 }
 
 #customization-area {
@@ -32,16 +33,15 @@ body {
 
 label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    font-weight: bold;
 }
 
 input[type="color"],
 input[type="text"],
 input[type="number"] {
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     padding: 5px;
-    border: 1px solid var(--primary-color);
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
+    font-size: 16px;
 }
