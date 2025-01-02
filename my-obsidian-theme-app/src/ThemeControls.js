@@ -1,12 +1,9 @@
 import React from 'react';
 
-const ThemeControls = ({ theme, setTheme }) => {
+const ThemeControls = ({ theme, updateTheme }) => {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setTheme((prevTheme) => ({
-      ...prevTheme,
-      [name]: value,
-    }));
+    updateTheme(name, value);
   };
 
   return (
