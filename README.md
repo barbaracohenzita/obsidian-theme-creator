@@ -20,7 +20,11 @@ Follow these instructions to set up and use the Obsidian Theme Creator web app.
     ```sh
     cd obsidian-theme-creator
     ```
-3. Install the dependencies:
+3. Navigate to the app directory:
+    ```sh
+    cd my-obsidian-theme-app
+    ```
+4. Install the dependencies:
     ```sh
     npm install
     ```
