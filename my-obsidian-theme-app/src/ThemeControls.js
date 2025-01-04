@@ -3,10 +3,14 @@ import React from 'react';
 const ThemeControls = ({ theme, updateTheme }) => {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
+ fix-theme-customization
     updateTheme((prevTheme) => ({
       ...prevTheme,
       [name]: value,
     }));
+
+    updateTheme(name, value);
+    main
   };
 
   return (
