@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ThemePreview from './ThemePreview';
 import ThemeControls from './ThemeControls';
-import './App.css';
 
 function App() {
   const [theme, setTheme] = useState({
@@ -19,13 +18,21 @@ function App() {
     }));
   };
 
+  useEffect(() => {
+    const root = document.documentElement;
+    Object.entries(theme).forEach(([key, value]) => {
+      const cssVar = `--${key.replace(/([A-Z])/g, '-$1').toLowerCase()}`;
+      root.style.setProperty(cssVar, value);
+    });
+  }, [theme]);
+
   return (
     <div className="App">
       <header className="App-header">
         <h1>Obsidian Theme Creator</h1>
       </header>
       <main>
-        <ThemePreview theme={theme} />
+        <ThemePreview />
         <ThemeControls theme={theme} updateTheme={updateTheme} />
       </main>
     </div>
