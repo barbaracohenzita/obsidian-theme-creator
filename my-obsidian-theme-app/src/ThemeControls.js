@@ -3,14 +3,18 @@ import React from 'react';
 const ThemeControls = ({ theme, updateTheme }) => {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
- fix-theme-customization
-    updateTheme((prevTheme) => ({
-      ...prevTheme,
-      [name]: value,
-    }));
-
     updateTheme(name, value);
-    main
+  };
+
+  const downloadTheme = () => {
+    const css = `:root {\n  --primary-color: ${theme.primaryColor};\n  --secondary-color: ${theme.secondaryColor};\n  --accent-color: ${theme.accentColor};\n  --font-family: ${theme.fontFamily};\n  --font-size: ${theme.fontSize};\n}`;
+    const blob = new Blob([css], { type: 'text/css' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'obsidian-theme.css';
+    a.click();
+    URL.revokeObjectURL(url);
   };
 
   return (
@@ -63,6 +67,7 @@ const ThemeControls = ({ theme, updateTheme }) => {
           max="36"
           onChange={handleInputChange}
         />
+        <button type="button" onClick={downloadTheme}>Download Theme</button>
       </form>
     </div>
   );

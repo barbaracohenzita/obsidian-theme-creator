@@ -41,6 +41,7 @@ Follow these instructions to set up and use the Obsidian Theme Creator web app.
 
 - Use the input elements in the "Customize Your Theme" section to adjust the primary color, secondary color, accent color, font family, and font size.
 - The changes will be reflected in real-time in the "Theme Preview" section.
+- When you are happy with the result, use the **Download Theme** button to save a CSS file that can be loaded in Obsidian.
 
 ### Built With
 

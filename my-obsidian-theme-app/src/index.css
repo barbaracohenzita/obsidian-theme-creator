@@ -16,6 +16,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+#preview-area {
+  padding: 1rem;
+}
+
+#preview {
+  border: 1px solid var(--primary-color);
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  padding: 1rem;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
